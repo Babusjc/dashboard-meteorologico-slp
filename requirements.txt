@@ -4,7 +4,7 @@ numpy<1.24
 requests==2.31.0
 streamlit
 scikit-learn==1.7.1
-matplotlib
+matplotlib==3.5.2
 seaborn
 plotly
 
