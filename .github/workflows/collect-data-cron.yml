@@ -1,0 +1,28 @@
+name: Coleta Diária de Dados Meteorológicos
+
+on:
+  schedule:
+    # Executa diariamente às 06:00 UTC (03:00 BRT - horário de Brasília, ou ajuste conforme sua necessidade)
+    - cron: '0 6 * * *'
+  workflow_dispatch: # Permite acionar o workflow manualmente
+
+jobs:
+  collect_data:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout do Código
+      uses: actions/checkout@v4
+
+    - name: Configurar Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10' # Use a versão do Python que você deseja, 3.9 ou 3.12
+
+    - name: Instalar Dependências
+      run: pip install -r requirements.txt
+
+    - name: Executar Script de Coleta de Dados
+      run: python api/collect-data.py # Ajuste o caminho se seu arquivo collect-data.py estiver em outro local
+      env:
+        DATABASE_URL: ${{ secrets.DATABASE_URL }}
