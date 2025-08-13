@@ -28,7 +28,7 @@ def setup_database(database_url):
             regiao VARCHAR(2) DEFAULT 'SE',
             latitude DECIMAL(10, 6) DEFAULT -23.2283,
             longitude DECIMAL(10, 6) DEFAULT -45.4169,
-            altitude DECIMAL(8, 2) DEFAULT 629.0,
+            altitude DECIMAL(8, 2) DEFAULT 874.0,
             temperatura_maxima DECIMAL(5, 2),
             temperatura_minima DECIMAL(5, 2),
             temperatura_media DECIMAL(5, 2),
